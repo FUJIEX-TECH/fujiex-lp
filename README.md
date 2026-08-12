@@ -1,31 +1,50 @@
 # Fujiex — Landing page
 
-Página de venda da produção de dados de treino visual para IA.
-No ar em https://lp.fujiextech.com
+No ar em https://fujiextech.com · Homologação em https://staging.fujiextech.com
+
+## Dois ambientes
+
+| Branch | Ambiente | URL |
+|---|---|---|
+| `staging` | homologação, para os sócios revisarem | staging.fujiextech.com |
+| `main` | produção | fujiextech.com |
+
+**Nunca editar os arquivos deste repositório à mão.** A fonte da verdade é a pasta
+`site/` do workspace. Publicar sempre pelo script:
+
+```
+./publicar.sh stage "o que mudou"    # sobe pra homologação
+./publicar.sh prod  "o que mudou"    # sobe pra produção
+```
+
+O script sincroniza `site/` para cá, reescreve os links internos, copia só as imagens
+efetivamente referenciadas e aborta se algum asset estiver faltando.
 
 ## Estrutura
 
 - `index.html` — home: hero, posicionamento, números, 6 categorias, formulário, rodapé
-- `about.html` — About us: missão e os quatro mecanismos (método, registro, incentivo, geografia)
+- `about.html` — About us: missão e os quatro mecanismos
 - `css/site.css` — folha compartilhada pelas duas páginas
-- `img/hero-opcoes/hero-f-azul.png` — ilustração da hero
-- `img/about-team.jpg` — ilustração do About
-- `img/portfolio/` — peças reais, 6 categorias
-- `img/favicon-*.png` — favicon (a torre em neon sobre azul)
+- `img/` — ilustrações, portfólio por categoria, favicon e cartão de link
 
 ## Convenções
 
-- Paleta: fundo `#162CB6` · neon `#39FF14` · texto sobre azul `#A8FF8F`. Trocar só no
-  bloco PALETA do `:root` em `css/site.css`.
-- Toda imagem sobre azul tem o fundo recolorido para `#162CB6` exato, senão a emenda
-  com a seção fica visível.
-- Fundo de seção mora sempre numa `<section>` de largura total; `.c` só limita o conteúdo.
+- Paleta: fundo `#162CB6` · neon `#39FF14` · texto sobre azul `#A8FF8F`.
+  Trocar só no bloco PALETA do `:root` em `css/site.css`.
+- Imagem que encosta no azul tem o fundo recolorido para `#162CB6` exato, senão a
+  emenda com a seção fica visível.
+- Fundo de seção mora sempre numa `<section>` de largura total; `.c` só limita o
+  conteúdo. Fundo aplicado junto com `.c` deixa faixas laterais transparentes.
 - `.up` (animação de entrada) nunca no mesmo elemento que tenha `opacity`, hover ou
-  transform próprios — a regra base ou a animação anulam uma à outra.
+  transform próprios: um anula o outro.
+- Sem travessão em nenhum texto.
 
 ## Formulário
 
-Envia via FormSubmit para `hello@fujiextech.com`. O endpoint está em `FORM_ENDPOINT`,
-no topo do script de cada página. Não funciona aberto como `file://`: precisa de HTTP.
+Envia via FormSubmit para `hello@fujiextech.com`. Endpoint em `FORM_ENDPOINT`, no topo
+do script de cada página. Não funciona em `file://`, precisa de HTTP.
 
-Deploy: Vercel (estático, sem build). Push na `main` republica.
+## Plano da Vercel
+
+O repositório precisa continuar **público**: o plano Hobby não aceita repositório
+privado pertencente a organização.
