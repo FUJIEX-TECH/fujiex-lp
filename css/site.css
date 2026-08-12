@@ -375,3 +375,5 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
 .team a{color:var(--bg);border-bottom:1px solid var(--line);transition:.2s}
 .team a:hover{border-color:var(--bg)}
 @media(max-width:780px){.team{grid-template-columns:1fr}}
+
+/* build: 2026-08-11T23:02:58 */
