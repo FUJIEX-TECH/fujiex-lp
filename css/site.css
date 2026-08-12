@@ -345,8 +345,12 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
    o fundo BRANCO mora na section de largura total; o .c só limita o conteúdo.
    se o fundo ficasse no .c, sobrariam faixas laterais mostrando o azul preso atrás. */
 .creed-sec{background:var(--paper);padding:clamp(70px,10vh,130px) 0}
-.creed{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,90px)}
-.creed h2{font-size:clamp(28px,3.5vw,52px);color:var(--ink);max-width:16ch;align-self:start}
+/* o título acompanha a leitura em vez de ficar parado no topo: com 4 parágrafos
+   na direita, a esquerda sobrava quase mil pixels de vazio. */
+.creed{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,90px)}
+.creed h2{font-size:clamp(28px,3.5vw,52px);color:var(--ink);max-width:15ch;
+          align-self:start;position:sticky;top:calc(var(--nav-h) + clamp(28px,5vh,64px))}
+@media(max-width:900px){.creed h2{position:static}}
 .creed .body p{font-size:clamp(17px,1.32vw,21px);line-height:1.6;color:var(--ink-mut);
                margin-bottom:clamp(20px,2.4vh,30px);max-width:46ch}
 .creed .body p:last-child{margin-bottom:0}
