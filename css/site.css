@@ -377,4 +377,3 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
 @media(max-width:780px){.team{grid-template-columns:1fr}}
 
 
-/* deploy check 232243 */
