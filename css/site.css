@@ -5,7 +5,9 @@
 :root{
   /* ---------- PALETA (única coisa a trocar depois do teste de cor) ---------- */
   --bg:#162CB6;          /* azul mais vivo que ainda deixa TODO texto ser neon (7.48:1) */
-  --acc:#39FF14;         /* neon puro — display, botões, acentos */
+  --acc:#39FF14;         /* neon puro — SÓ botão e estado de hover. Nunca texto de display.
+                            Regra do Leandro em 13/ago/2026: título, kicker e rótulo sobre
+                            azul usam --soft, o mesmo verde da hero. */
   --soft:#A8FF8F;        /* neon lavado — corpo. continua verde, 8.39:1 */
   --on-acc:var(--bg);    /* texto do botão VAZADO no azul da página — 7.48:1 */
   --a1:#162FC8;          /* tinta 1 da ilustração */
@@ -219,7 +221,7 @@ body > section,body > footer,body > .mq{position:relative;z-index:1}
                     object-position:center;border-radius:3px;display:block}
 .ca-seq b{position:absolute;left:11px;top:11px;font-family:var(--mono);font-weight:400;
           font-size:clamp(14px,1.25vw,19px);letter-spacing:.08em;line-height:1;
-          padding:7px 11px;border-radius:4px;background:var(--ph-bg);color:var(--acc)}
+          padding:7px 11px;border-radius:4px;background:var(--ph-bg);color:var(--soft)}
 .ca-seq figure:first-child b{color:var(--ph-fg)}
 /* contain, não cover: as peças têm formatos diferentes (retrato, quadrada,
    paisagem) e cortar destruía até 50% das paisagens. Assim cada uma aparece
@@ -230,7 +232,7 @@ body > section,body > footer,body > .mq{position:relative;z-index:1}
    cinco clientes diferentes. o ritmo vem da alternância de LADO dos blocos.
    o neon fica como faísca no rótulo, nunca como superfície. */
 .case-art{--ph-bg:var(--bg);--ph-fg:var(--soft);--ph-line:rgba(168,255,143,.26)}
-.case-art .lbl{color:var(--acc);opacity:1;font-size:clamp(12px,1vw,14px)}
+.case-art .lbl{color:var(--soft);opacity:1;font-size:clamp(12px,1vw,14px)}
 .case-art .lbl{color:var(--ph-fg);opacity:.75}
 .case-art h3{color:var(--ph-fg);max-width:18ch;margin-top:12px;
              font-size:clamp(22px,2.05vw,32px)}
@@ -333,7 +335,7 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
 .pg-head .crumb{font-family:var(--mono);font-size:12px;letter-spacing:var(--tr-l);
                 text-transform:uppercase;color:var(--soft);opacity:.6;margin-bottom:clamp(22px,3vh,38px)}
 .pg-head .crumb a:hover{color:var(--acc)}
-.pg-head h1{font-size:clamp(46px,7vw,104px);color:var(--acc);max-width:14ch}
+.pg-head h1{font-size:clamp(46px,7vw,104px);color:var(--soft);max-width:14ch}
 .pg-head p{margin-top:clamp(22px,2.8vh,36px);font-size:clamp(18px,1.6vw,26px);
            line-height:1.42;color:var(--soft);max-width:44ch}
 
@@ -359,7 +361,7 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
 
 /* faixa azul: o argumento estrutural */
 .sec-dark{background:var(--bg);color:var(--fg);padding:clamp(70px,10vh,130px) 0}
-.sec-dark .lbl{color:var(--acc);margin-bottom:clamp(22px,2.8vh,36px);display:block}
+.sec-dark .lbl{color:var(--soft);margin-bottom:clamp(22px,2.8vh,36px);display:block}
 .sec-dark h2{font-size:clamp(28px,3.6vw,54px);color:var(--soft);max-width:19ch}
 .sec-dark p{margin-top:clamp(22px,2.6vh,34px);font-size:clamp(17px,1.32vw,21px);
             line-height:1.55;color:var(--soft);opacity:.86;max-width:52ch}
