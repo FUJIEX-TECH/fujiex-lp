@@ -320,7 +320,7 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
          0 clamp(56px,8vh,110px)}
 .pg-head .c{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(26px,4vw,64px);align-items:center}
 .pg-head .pg-txt{min-width:0}
-.pg-head img{width:100%;height:auto;display:block;border-radius:14px}
+.pg-head img{width:100%;height:auto;display:block}  /* sem raio: a arte divide o fundo com a página, canto arredondado denuncia o retângulo */
 @media(max-width:900px){
   .pg-head .c{grid-template-columns:1fr}
   .pg-head img{max-width:640px}
