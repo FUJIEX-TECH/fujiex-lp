@@ -346,21 +346,21 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
 /* três parágrafos "It's the …" — coluna à direita, como na referência.
    o fundo BRANCO mora na section de largura total; o .c só limita o conteúdo.
    se o fundo ficasse no .c, sobrariam faixas laterais mostrando o azul preso atrás. */
-.creed-sec{background:var(--bg);padding:clamp(70px,10vh,130px) 0}
+.creed-sec{background:var(--paper);padding:clamp(70px,10vh,130px) 0}
 /* o título acompanha a leitura em vez de ficar parado no topo: com 4 parágrafos
    na direita, a esquerda sobrava quase mil pixels de vazio. */
 .creed{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(30px,5vw,90px)}
-.creed h2{font-size:clamp(32px,4.2vw,60px);color:var(--soft);max-width:15ch}
+.creed h2{font-size:clamp(32px,4.2vw,60px);color:var(--ink);max-width:15ch}
 /* titulo + arte do registro andam juntos com a leitura; a arte e pontuacao,
    nao protagonista: teto de 320px pra nao competir com o texto */
 .creed-l{align-self:start;position:sticky;top:calc(var(--nav-h) + clamp(28px,5vh,64px))}
 .creed-art{width:min(72%,320px);height:auto;display:block;margin-top:clamp(30px,4.5vh,56px)}
 @media(max-width:900px){.creed-l{position:static}
   .creed-art{max-width:260px;margin:26px 0 8px}}
-.creed .body p{font-size:clamp(17px,1.32vw,21px);line-height:1.6;color:var(--soft);opacity:.86;
+.creed .body p{font-size:clamp(17px,1.32vw,21px);line-height:1.6;color:var(--ink-mut);
                margin-bottom:clamp(20px,2.4vh,30px);max-width:46ch}
 .creed .body p:last-child{margin-bottom:0}
-.creed .body b{font-weight:500;color:var(--soft)}
+.creed .body b{font-weight:500;color:var(--ink)}
 @media(max-width:900px){.creed{grid-template-columns:1fr}}
 
 /* faixa azul: o argumento estrutural */
