@@ -318,12 +318,12 @@ footer{background:var(--bg);color:var(--fg);padding:clamp(64px,9vh,110px) 0 34px
 .pg-head{position:sticky;top:0;z-index:0;
          background:var(--bg);color:var(--fg);padding:calc(var(--nav-h) + clamp(56px,8vh,110px))
          0 clamp(56px,8vh,110px)}
-.pg-head .c{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,70px);align-items:center}
+.pg-head .c{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(26px,4vw,64px);align-items:center}
 .pg-head .pg-txt{min-width:0}
 .pg-head img{width:100%;height:auto;display:block;border-radius:14px}
 @media(max-width:900px){
   .pg-head .c{grid-template-columns:1fr}
-  .pg-head img{max-width:560px}
+  .pg-head img{max-width:640px}
 }
 /* entrada do cabeçalho, mesma curva e distância da hero.
    ATENÇÃO: .up nunca no mesmo elemento que já tem opacity própria — a regra
