@@ -117,6 +117,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--bg)}
 .hero-in{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;
          align-items:center;justify-content:center;text-align:center;
          padding:24px var(--pad) calc(100vw * (1 - 0.45) / 1.777 * var(--hero-drop))}
+/* mobile: em tela retrato a panoramica em 100% de largura vira uma tirinha.
+   Aqui a ALTURA manda (42svh) e o corredor central ancora o corte; o 57vw
+   garante largura >= viewport pra nunca aparecer a borda lateral do PNG.
+   O topo do PNG e #162CB6 exato, entao a emenda com o fundo segue invisivel. */
+@media(max-width:720px){
+  /* arte propria do mobile: mesma cena recomposta em 1:1 (15/ago), pessoas
+     maiores e so 25% de topo vazio. O max() garante largura >= viewport. */
+  .hero{background-image:url("../img/hero-mobile.png");
+        background-size:auto max(52svh,100vw)}
+  .hero-in{padding-bottom:max(34svh,66vw)}
+}
 .hero .eb{color:var(--soft);font-weight:400;font-size:clamp(14px,1.15vw,17px);
           margin-bottom:clamp(20px,2.6vh,32px)}
 /* ENTRADA DA HERO: a imagem aparece primeiro, o texto sobe depois de trás de
