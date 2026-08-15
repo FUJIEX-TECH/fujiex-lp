@@ -122,8 +122,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--bg)}
    garante largura >= viewport pra nunca aparecer a borda lateral do PNG.
    O topo do PNG e #162CB6 exato, entao a emenda com o fundo segue invisivel. */
 @media(max-width:720px){
-  .hero{background-size:auto max(42svh,57vw)}
-  .hero-in{padding-bottom:max(26svh,36vw)}
+  /* arte propria do mobile: mesma cena recomposta em 1:1 (15/ago), pessoas
+     maiores e so 25% de topo vazio. O max() garante largura >= viewport. */
+  .hero{background-image:url("../img/hero-mobile.png");
+        background-size:auto max(52svh,100vw)}
+  .hero-in{padding-bottom:max(34svh,66vw)}
 }
 .hero .eb{color:var(--soft);font-weight:400;font-size:clamp(14px,1.15vw,17px);
           margin-bottom:clamp(20px,2.6vh,32px)}
